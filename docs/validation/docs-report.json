@@ -1,0 +1,97 @@
+{
+  "checks": [
+    {
+      "document": "使用手册",
+      "viewport": "1440x1050",
+      "sections": 24,
+      "embedded_images": 0,
+      "missing_anchors": 0,
+      "page_overflow_px": 0,
+      "broken_images": 0
+    },
+    {
+      "document": "使用手册",
+      "viewport": "390x844",
+      "sections": 24,
+      "embedded_images": 0,
+      "missing_anchors": 0,
+      "page_overflow_px": 0,
+      "broken_images": 0
+    },
+    {
+      "document": "图文操作教程",
+      "viewport": "1440x1050",
+      "sections": 42,
+      "embedded_images": 61,
+      "missing_anchors": 0,
+      "page_overflow_px": 0,
+      "broken_images": 0
+    },
+    {
+      "document": "图文操作教程",
+      "viewport": "390x844",
+      "sections": 42,
+      "embedded_images": 61,
+      "missing_anchors": 0,
+      "page_overflow_px": 0,
+      "broken_images": 0
+    },
+    {
+      "document": "部署与维护说明",
+      "viewport": "1440x1050",
+      "sections": 18,
+      "embedded_images": 0,
+      "missing_anchors": 0,
+      "page_overflow_px": 0,
+      "broken_images": 0
+    },
+    {
+      "document": "部署与维护说明",
+      "viewport": "390x844",
+      "sections": 18,
+      "embedded_images": 0,
+      "missing_anchors": 0,
+      "page_overflow_px": 0,
+      "broken_images": 0
+    },
+    {
+      "document": "逐项核查与验收记录",
+      "viewport": "1440x1050",
+      "sections": 17,
+      "embedded_images": 0,
+      "missing_anchors": 0,
+      "page_overflow_px": 0,
+      "broken_images": 0
+    },
+    {
+      "document": "逐项核查与验收记录",
+      "viewport": "390x844",
+      "sections": 17,
+      "embedded_images": 0,
+      "missing_anchors": 0,
+      "page_overflow_px": 0,
+      "broken_images": 0
+    },
+    {
+      "document": "外部AI接入与表格回填指南",
+      "viewport": "1440x1050",
+      "sections": 9,
+      "embedded_images": 1,
+      "missing_anchors": 0,
+      "page_overflow_px": 0,
+      "broken_images": 0
+    },
+    {
+      "document": "外部AI接入与表格回填指南",
+      "viewport": "390x844",
+      "sections": 9,
+      "embedded_images": 1,
+      "missing_anchors": 0,
+      "page_overflow_px": 0,
+      "broken_images": 0
+    }
+  ],
+  "passed": 10,
+  "failed": 0,
+  "mode": "离线HTML/Chromium排版验证；非打印机或所有浏览器兼容性验收"
+}

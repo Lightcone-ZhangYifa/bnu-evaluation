@@ -1,0 +1,54 @@
+{
+  "version": "1.0.0rc4",
+  "renderer": "PyMuPDF 1.26.7",
+  "files": [
+    {
+      "file": "合成学生_个人图片材料.pdf",
+      "pages": 12,
+      "image_count_per_page": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "minimum_image_height_points": 327.96,
+      "text_and_image_bounds_valid": true,
+      "stamp_fields_present": true
+    },
+    {
+      "file": "边界测试_长说明分页.pdf",
+      "pages": 15,
+      "image_count_per_page": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "minimum_image_height_points": 277.49,
+      "text_and_image_bounds_valid": true,
+      "stamp_fields_present": true
+    }
+  ],
+  "passed": 2,
+  "failed": 0,
+  "scope": "检查全部PDF页面的一图数量、无裁切等比、页眉页脚、文字边界及文字在图片上方；另保存代表页供人工查看。非实体打印机验收。"
+}

@@ -1,0 +1,102 @@
+name: clearledger
+x-app-env: &app-env
+  ENVIRONMENT: production
+  DATA_DIR: /data
+  PUBLIC_ORIGIN: ${PUBLIC_ORIGIN:?run python manage.py configure first}
+  APP_SECRET: ${APP_SECRET:?required}
+  ADMIN_PATH: ${ADMIN_PATH:?required}
+  ADMIN_TOTP_SECRET: ${ADMIN_TOTP_SECRET:?required}
+  CLAMAV_HOST: scanner
+services:
+  database:
+    image: postgres:17-bookworm
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: zc_migrator
+      POSTGRES_PASSWORD: ${PG_ADMIN_PASSWORD:?required}
+      POSTGRES_DB: clearledger
+      APP_DB_PASSWORD: ${APP_DB_PASSWORD:?required}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./deploy/initdb.sh:/docker-entrypoint-initdb.d/10-runtime-role.sh:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U zc_migrator -d clearledger"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    networks: [private]
+  scanner:
+    image: clamav/clamav:stable
+    restart: unless-stopped
+    volumes:
+      - signatures:/var/lib/clamav
+      - ./deploy/clamd.conf:/etc/clamav/clamd.conf:ro
+    healthcheck:
+      test: ["CMD", "clamdscan", "--ping", "3"]
+      interval: 30s
+      timeout: 10s
+      retries: 30
+      start_period: 180s
+    mem_limit: 3g
+    networks: [private, updates]
+  migrate:
+    build: .
+    image: clearledger:1.0.0rc2
+    restart: "no"
+    environment:
+      <<: *app-env
+      DATABASE_URL: postgresql+psycopg://zc_migrator:${PG_ADMIN_PASSWORD}@database:5432/clearledger
+      BOOTSTRAP_ADMIN_PASSWORD: ${BOOTSTRAP_ADMIN_PASSWORD:?required for initialization}
+    command: ["python", "-m", "app.manage", "init-db", "--grant-runtime"]
+    volumes: ["objects:/data"]
+    depends_on:
+      database: {condition: service_healthy}
+    networks: [private]
+    security_opt: ["no-new-privileges:true"]
+  app:
+    build: .
+    image: clearledger:1.0.0rc2
+    restart: unless-stopped
+    environment:
+      <<: *app-env
+      DATABASE_URL: postgresql+psycopg://zc_app:${APP_DB_PASSWORD}@database:5432/clearledger
+    volumes: ["objects:/data"]
+    read_only: true
+    tmpfs: ["/tmp:size=640m,mode=1777"]
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
+    mem_limit: 4g
+    pids_limit: 128
+    depends_on:
+      database: {condition: service_healthy}
+      scanner: {condition: service_healthy}
+      migrate: {condition: service_completed_successfully}
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/api/health',timeout=3)"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+    networks: [private]
+  gateway:
+    image: caddy:2
+    restart: unless-stopped
+    ports: ["80:80", "443:443", "443:443/udp"]
+    environment:
+      DOMAIN: ${DOMAIN:?required}
+    volumes:
+      - ./deploy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddydata:/data
+      - caddyconfig:/config
+    depends_on:
+      app: {condition: service_healthy}
+    networks: [private, edge]
+networks:
+  private: {internal: true}
+  edge: {}
+  updates: {}
+volumes:
+  objects: {}
+  pgdata: {}
+  signatures: {}
+  caddydata: {}
+  caddyconfig: {}

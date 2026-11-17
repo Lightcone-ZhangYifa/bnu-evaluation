@@ -1,0 +1,13 @@
+{$DOMAIN} {
+    encode zstd gzip
+    request_body {
+        max_size 520MB
+    }
+    reverse_proxy app:8000 {
+        transport http {
+            response_header_timeout 180s
+        }
+    }
+    # No URI/access log by default: URLs may contain project/student identifiers.
+    # Enable controlled operational logging only with an explicit retention policy.
+}

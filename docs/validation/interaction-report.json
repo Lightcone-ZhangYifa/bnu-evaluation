@@ -1,0 +1,185 @@
+{
+  "version": "1.0.0rc4",
+  "mode": "离线Chromium DOM + Python HTTP桥 + 本机真实uvicorn/SQLite；非浏览器原生网络和cookie；截图源为本地canvas MediaStream替身",
+  "passed": 18,
+  "checks": [
+    "真实canvas帧截取并停止全部轨道；数值裁剪320×180；确认仅入队、未上传",
+    "取消和拒绝授权不产生文件，不改变待上传队列、不发送材料请求",
+    "系统截图粘贴与确认上传走同一图片接口，服务器保留原裁剪尺寸",
+    "反馈截图、粘贴预览与原文字同时保留；最终提交2附件，学生端无反馈后台权限",
+    "70人名册Shift连续选择、已选行右键保留多选、Shift+F10菜单与Esc焦点恢复",
+    "多列筛选显示隐藏已选数；右键批量改班真实保存3人、其余67人不变",
+    "真实鼠标矩形命中多行；Esc取消拖动恢复此前选择；不触发服务端写入",
+    "输入框右键不被集合菜单接管，原生复制粘贴仍可用",
+    "Alt+2保存备注及需人工判断，成功后进入固定队列下一项，不因状态变更重排",
+    "必填缺失与网络中断不跳项、不丢备注；同一幂等键重试仅产生一个标注版本",
+    "Alt+1连同层级分类、日期和分值保存；有效项退出原筛选也仍保留本轮位置",
+    "末项成功保存后停留，下一项禁用；不会回到第一项重复评分",
+    "浏览器下载真实任务ZIP→定位身份错误并下载JSON→零写入预览→确认整批回填，均非人工核对",
+    "计算总表→成果明细→原材料跳转使用同一材料ID，不按描述猜测匹配",
+    "70张真实上传图片分60/10两页：全部筛选结果全选跨页保留，所选范围不误报为本页",
+    "浏览器名册表格导入先预览不创建账号，明确确认后创建第71名学生",
+    "新增交互所在阅卷、总表、收件页面桌面/竖屏/横屏共9组无整页横向溢出",
+    "宽表框选接近边缘自动双轴滚动；Esc取消恢复原选择，表格值不改变"
+  ],
+  "screenshots": [
+    {
+      "file": "r01-截图预览与裁剪.png",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "overflow_px": 0
+    },
+    {
+      "file": "r02-截图粘贴后已上传.png",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "overflow_px": 0
+    },
+    {
+      "file": "r03-反馈截图与文字保留.png",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "overflow_px": 0
+    },
+    {
+      "file": "r04-多选与右键菜单.png",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "overflow_px": 0
+    },
+    {
+      "file": "r05-框选与批量操作.png",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "overflow_px": 0
+    },
+    {
+      "file": "r06-连续阅卷固定队列.png",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "overflow_px": 0
+    },
+    {
+      "file": "r07-回填校验位置与错误说明.png",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "overflow_px": 0
+    },
+    {
+      "file": "r08-网页AI回填预览.png",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "overflow_px": 0
+    },
+    {
+      "file": "r10-跨页选择与范围提示.png",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "overflow_px": 0
+    },
+    {
+      "file": "r09-review-1440.png",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "overflow_px": 0
+    },
+    {
+      "file": "r09-calculation-1440.png",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "overflow_px": 0
+    },
+    {
+      "file": "r09-submission-1440.png",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "overflow_px": 0
+    },
+    {
+      "file": "r09-review-390.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "overflow_px": 0
+    },
+    {
+      "file": "r09-calculation-390.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "overflow_px": 0
+    },
+    {
+      "file": "r09-submission-390.png",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "overflow_px": 0
+    },
+    {
+      "file": "r09-review-844.png",
+      "viewport": {
+        "width": 844,
+        "height": 390
+      },
+      "overflow_px": 0
+    },
+    {
+      "file": "r09-calculation-844.png",
+      "viewport": {
+        "width": 844,
+        "height": 390
+      },
+      "overflow_px": 0
+    },
+    {
+      "file": "r09-submission-844.png",
+      "viewport": {
+        "width": 844,
+        "height": 390
+      },
+      "overflow_px": 0
+    }
+  ],
+  "javascript_errors": [],
+  "http_request_count": 443,
+  "fixture_scale": {
+    "students": 71,
+    "initial_images": 6,
+    "uploaded_images_after_growth": 70
+  },
+  "not_tested": [
+    "浏览器原生网络（采用--bridge时）",
+    "系统原生屏幕选择器/权限弹窗",
+    "实体Windows/macOS/手机",
+    "生产HTTPS/跨反向代理",
+    "并发峰值压测"
+  ]
+}

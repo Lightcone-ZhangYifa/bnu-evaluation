@@ -1,0 +1,17 @@
+**/__pycache__
+**/.pytest_cache
+.env*
+var
+*.zcp
+*.zip
+*.sqlite*
+tests
+docs
+agent
+.git
+.coverage
+
+.env.migration
+.deployment.json
+.runtime/
+deploy/generated/

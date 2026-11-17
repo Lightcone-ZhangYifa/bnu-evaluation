@@ -1,0 +1,1469 @@
+{
+  "system": "北京师范大学学生综合测评管理系统",
+  "version": "1.0.0rc4",
+  "status": "发布候选版；目标环境验收待完成",
+  "generated_at": "2026-09-22T07:54:23.492488+00:00",
+  "synthetic_only": true,
+  "regression": {
+    "tests": 169,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "coverage": {
+    "scope": "app语句覆盖率；非分支／性能／生产环境覆盖",
+    "lines_covered": 3153,
+    "lines_valid": 3605,
+    "line_rate": 0.8746
+  },
+  "ui": {
+    "version": "1.0.0rc4",
+    "mode": "offline Chromium DOM + real ASGI API bridge",
+    "not_validated": [
+      "实际浏览器HTTP/HTTPS网络",
+      "真实设备拍照与HEIC解码",
+      "实际部署服务与压力容量"
+    ],
+    "screenshots": [
+      {
+        "id": "01-entry",
+        "caption": "入口页：分别选择学生登录、教师登录。",
+        "file": "01-entry.png",
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "overflow_px": 0
+      },
+      {
+        "id": "02-student-login",
+        "caption": "学生登录页。账号和初始密码由负责教师发放。",
+        "file": "02-student-login.png",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "overflow_px": 0
+      },
+      {
+        "id": "03-first-password",
+        "caption": "首次登录必须填写初始密码和新密码。",
+        "file": "03-first-password.png",
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "overflow_px": 0
+      },
+      {
+        "id": "04-workspace-empty",
+        "caption": "教师工作空间及说明文档入口。",
+        "file": "04-workspace-empty.png",
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "overflow_px": 0
+      },
+      {
+        "id": "05-students",
+        "caption": "教师管理学院学生名册。",
+        "file": "05-students.png",
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "overflow_px": 0
+      },
+      {
+        "id": "06-roster-import",
+        "caption": "导入CSV或XLSX，或展开下方区域新增一名学生。",
+        "file": "06-roster-import.png",
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "overflow_px": 0
+      },
+      {
+        "id": "07-student-edit",
+        "caption": "核对学号后修改姓名、班级或账号状态。",
+        "file": "07-student-edit.png",
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "overflow_px": 0
+      },
+      {
+        "id": "08-project-create",
+        "caption": "一个班级建立一个工程，选择正确年度与参评学生。",
+        "file": "08-project-create.png",
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "overflow_px": 0
+      },
+      {
+        "id": "09-overview",
+        "caption": "工程总览按准备、提交、标注、公共信息、计算、公示、存档排列。",
+        "file": "09-overview.png",
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "overflow_px": 0
+      },
+      {
+        "id": "10-setup",
+        "caption": "准备工程：左侧为分类规则，右侧为名册、时间和原始文件。",
+        "file": "10-setup.png",
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "overflow_px": 0
+      },
+      {
+        "id": "11-rule-edit",
+        "caption": "逐级设置求和或取最高、上限和权重。",
+        "file": "11-rule-edit.png",
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "overflow_px": 0
+      },
+      {
+        "id": "12-reviewer-permissions",
+        "caption": "参评学生和审核人员分别选择。审核权限只作用于本工程。",
+        "file": "12-reviewer-permissions.png",
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "overflow_px": 0
+      },
+      {
+        "id": "13-rule-upload",
+        "caption": "上传原始细则；多个细则文件可分次上传。",
+        "file": "13-rule-upload.png",
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "overflow_px": 0
+      },
+      {
+        "id": "14-schedule",
+        "caption": "填写开放、截止、公示申诉截止时间，并分别保存。",
+        "file": "14-schedule.png",
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "overflow_px": 0
+      },
+      {
+        "id": "15-student-workspace",
+        "caption": "学生在“我的综测”中打开所在班级工程。",
+        "file": "15-student-workspace.png",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "overflow_px": 0
+      },
+      {
+        "id": "16-student-upload",
+        "caption": "手机提交页：选择照片，无需填写成果文字或分数。",
+        "file": "16-student-upload.png",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "overflow_px": 0
+      },
+      {
+        "id": "17-student-queue",
+        "caption": "选择后先检查预览，再点击“提交选中的图片”。",
+        "file": "17-student-queue.png",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "overflow_px": 0
+      },
+      {
+        "id": "18-submission-receipt",
+        "caption": "回执说明本轮图片已收到，不表示已经认定有效。",
+        "file": "18-submission-receipt.png",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "overflow_px": 0
+      },
+      {
+        "id": "19-submission-monitor",
+        "caption": "教师查看各学生已保存材料数和提交确认情况。",
+        "file": "19-submission-monitor.png",
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "overflow_px": 0
+      },
+      {
+        "id": "20-review",
+        "caption": "标注页面：默认筛选未标注、不可信、系统异常、需人工判断。",
+        "file": "20-review.png",
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "overflow_px": 0
+      },
+      {
+        "id": "21-annotation-form",
+        "caption": "逐项填写材料日期、分类、细则项目、获奖情形和局部分值。",
+        "file": "21-annotation-form.png",
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "overflow_px": 0
+      },
+      {
+        "id": "22-annotation-history",
+        "caption": "修改历史保留每次认定、执行者和时间。",
+        "file": "22-annotation-history.png",
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "overflow_px": 0
+      },
+      {
+        "id": "23-public-new",
+        "caption": "公共名单单独维护，选择对应工程的分类规则。",
+        "file": "23-public-new.png",
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "overflow_px": 0
+      },
+      {
+        "id": "24-public-rows",
+        "caption": "从学院名册选择学生；逐行填写情形、分值和备注。",
+        "file": "24-public-rows.png",
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "overflow_px": 0
+      },
+      {
+        "id": "25-public-binding",
+        "caption": "工程绑定已确认名单的固定版本。",
+        "file": "25-public-binding.png",
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "overflow_px": 0
+      },
+      {
+        "id": "26-academic",
+        "caption": "课程成绩录入页：先上传教务来源，再填写课程与学生成绩。",
+        "file": "26-academic.png",
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "overflow_px": 0
+      },
+      {
+        "id": "27-academic-grades",
+        "caption": "按学生录入完整成绩。两级制免计入、替代课程另有字段。",
+        "file": "27-academic-grades.png",
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "overflow_px": 0
+      },
+      {
+        "id": "54-export-tables",
+        "caption": "工程各类表格导出目录；每个按钮只导出当前已保存数据。",
+        "file": "54-export-tables.png",
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "overflow_px": 0
+      },
+      {
+        "id": "55-category-export",
+        "caption": "选择一个分类，可以只导出该分类及所有下级，减少横向列数。",
+        "file": "55-category-export.png",
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "overflow_px": 0
+      },
+      {
+        "id": "28-calculation",
+        "caption": "系统按已保存规则计算；点击学生打开计算轨迹。",
+        "file": "28-calculation.png",
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "overflow_px": 0
+      },
+      {
+        "id": "29-calculation-detail",
+        "caption": "个人计算轨迹显示原始输入、聚合、封顶前后数值。",
+        "file": "29-calculation-detail.png",
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "overflow_px": 0
+      },
+      {
+        "id": "30-publish-dialog",
+        "caption": "选择阶段性或最终公示，系统不会覆盖旧快照。",
+        "file": "30-publish-dialog.png",
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "overflow_px": 0
+      },
+      {
+        "id": "31-publication",
+        "caption": "教师查看历次公示与补交申请。",
+        "file": "31-publication.png",
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "overflow_px": 0
+      },
+      {
+        "id": "32-personal-result",
+        "caption": "学生公示页仅显示本人结果及本人各项认定。",
+        "file": "32-personal-result.png",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "overflow_px": 0
+      },
+      {
+        "id": "33-student-appeal",
+        "caption": "学生通过选项提交异议或补交申请，不需要撰写说明。",
+        "file": "33-student-appeal.png",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "overflow_px": 0
+      },
+      {
+        "id": "34-appeal-decision",
+        "caption": "教师记录批准或拒绝的依据，并为批准补交指定截止时间。",
+        "file": "34-appeal-decision.png",
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "overflow_px": 0
+      },
+      {
+        "id": "35-supplement-relation",
+        "caption": "新增材料通过“替代旧材料”关联，旧图片和旧标注仍然保留。",
+        "file": "35-supplement-relation.png",
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "overflow_px": 0
+      },
+      {
+        "id": "36-export",
+        "caption": "按用途导出工程文件、汇总表、个人PDF或只读材料包。",
+        "file": "36-export.png",
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "overflow_px": 0
+      },
+      {
+        "id": "37-personal-export",
+        "caption": "只选择所需学生导出个人PDF，避免分发全班材料。",
+        "file": "37-personal-export.png",
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "overflow_px": 0
+      },
+      {
+        "id": "38-file-actions",
+        "caption": "工程可重命名、移动、复制和移入回收站。",
+        "file": "38-file-actions.png",
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "overflow_px": 0
+      },
+      {
+        "id": "39-project-import",
+        "caption": "导入.zcp会校验完整性，创建独立导入件并要求核对来源。",
+        "file": "39-project-import.png",
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "overflow_px": 0
+      },
+      {
+        "id": "40-recycle",
+        "caption": "回收站提供工程恢复和文件夹恢复。",
+        "file": "40-recycle.png",
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "overflow_px": 0
+      },
+      {
+        "id": "41-agent-interface",
+        "caption": "外部Agent接口及短期令牌管理；系统不内置模型。",
+        "file": "41-agent-interface.png",
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "overflow_px": 0
+      },
+      {
+        "id": "42-agent-token",
+        "caption": "限定工程、有效期与公共名单草稿权限，不授予发布权。",
+        "file": "42-agent-token.png",
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "overflow_px": 0
+      },
+      {
+        "id": "15b-mobile-menu",
+        "caption": "手机点击左上角菜单，可找到使用手册、图文教程和反馈。",
+        "file": "15b-mobile-menu.png",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "overflow_px": 0
+      },
+      {
+        "id": "43-feedback",
+        "caption": "意见反馈可附截图或录屏，仅管理员可见。",
+        "file": "43-feedback.png",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "overflow_px": 0
+      },
+      {
+        "id": "44-admin-overview",
+        "caption": "管理员独立入口的运维概览；没有评分功能。",
+        "file": "44-admin-overview.png",
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "overflow_px": 0
+      },
+      {
+        "id": "45-admin-accounts",
+        "caption": "学院和账号管理；唯一管理员不能删除或停用。",
+        "file": "45-admin-accounts.png",
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "overflow_px": 0
+      },
+      {
+        "id": "46-college-create",
+        "caption": "先创建学院。",
+        "file": "46-college-create.png",
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "overflow_px": 0
+      },
+      {
+        "id": "47-teacher-create",
+        "caption": "创建教师登录名并指定所属学院，初始密码单独发放。",
+        "file": "47-teacher-create.png",
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "overflow_px": 0
+      },
+      {
+        "id": "48-admin-feedback",
+        "caption": "管理员查看文字及附件、更新处理状态、导出全部记录。",
+        "file": "48-admin-feedback.png",
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "overflow_px": 0
+      },
+      {
+        "id": "49-admin-audit",
+        "caption": "分页查看审计记录，或导出完整日志。",
+        "file": "49-admin-audit.png",
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "overflow_px": 0
+      },
+      {
+        "id": "50-public-version",
+        "caption": "查看指定版本的名单，修改必须另存为新版本。",
+        "file": "50-public-version.png",
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "overflow_px": 0
+      },
+      {
+        "id": "51-reviewer",
+        "caption": "被授权的学委或跨年级审核员可访问审核工程，不获得教师管理权限。",
+        "file": "51-reviewer.png",
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "overflow_px": 0
+      },
+      {
+        "id": "responsive-390-工作空间",
+        "caption": "工作空间：390×844布局检查",
+        "file": "responsive-390-工作空间.png",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "overflow_px": 0
+      },
+      {
+        "id": "responsive-390-学生名册",
+        "caption": "学生名册：390×844布局检查",
+        "file": "responsive-390-学生名册.png",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "overflow_px": 1
+      },
+      {
+        "id": "responsive-390-名单库",
+        "caption": "名单库：390×844布局检查",
+        "file": "responsive-390-名单库.png",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "overflow_px": 0
+      },
+      {
+        "id": "responsive-390-Agent接口",
+        "caption": "Agent接口：390×844布局检查",
+        "file": "responsive-390-Agent接口.png",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "overflow_px": 0
+      },
+      {
+        "id": "responsive-390-overview",
+        "caption": "overview：390×844布局检查",
+        "file": "responsive-390-overview.png",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "overflow_px": 0
+      },
+      {
+        "id": "responsive-390-setup",
+        "caption": "setup：390×844布局检查",
+        "file": "responsive-390-setup.png",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "overflow_px": 0
+      },
+      {
+        "id": "responsive-390-submission",
+        "caption": "submission：390×844布局检查",
+        "file": "responsive-390-submission.png",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "overflow_px": 0
+      },
+      {
+        "id": "responsive-390-review",
+        "caption": "review：390×844布局检查",
+        "file": "responsive-390-review.png",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "overflow_px": 0
+      },
+      {
+        "id": "responsive-390-public",
+        "caption": "public：390×844布局检查",
+        "file": "responsive-390-public.png",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "overflow_px": 0
+      },
+      {
+        "id": "responsive-390-academic",
+        "caption": "academic：390×844布局检查",
+        "file": "responsive-390-academic.png",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "overflow_px": 0
+      },
+      {
+        "id": "responsive-390-calculation",
+        "caption": "calculation：390×844布局检查",
+        "file": "responsive-390-calculation.png",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "overflow_px": 0
+      },
+      {
+        "id": "responsive-390-publication",
+        "caption": "publication：390×844布局检查",
+        "file": "responsive-390-publication.png",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "overflow_px": 0
+      },
+      {
+        "id": "responsive-390-archive",
+        "caption": "archive：390×844布局检查",
+        "file": "responsive-390-archive.png",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "overflow_px": 0
+      },
+      {
+        "id": "responsive-844-工作空间",
+        "caption": "工作空间：844×390布局检查",
+        "file": "responsive-844-工作空间.png",
+        "viewport": {
+          "width": 844,
+          "height": 390
+        },
+        "overflow_px": 0
+      },
+      {
+        "id": "responsive-844-学生名册",
+        "caption": "学生名册：844×390布局检查",
+        "file": "responsive-844-学生名册.png",
+        "viewport": {
+          "width": 844,
+          "height": 390
+        },
+        "overflow_px": 0
+      },
+      {
+        "id": "responsive-844-名单库",
+        "caption": "名单库：844×390布局检查",
+        "file": "responsive-844-名单库.png",
+        "viewport": {
+          "width": 844,
+          "height": 390
+        },
+        "overflow_px": 0
+      },
+      {
+        "id": "responsive-844-Agent接口",
+        "caption": "Agent接口：844×390布局检查",
+        "file": "responsive-844-Agent接口.png",
+        "viewport": {
+          "width": 844,
+          "height": 390
+        },
+        "overflow_px": 0
+      },
+      {
+        "id": "responsive-844-overview",
+        "caption": "overview：844×390布局检查",
+        "file": "responsive-844-overview.png",
+        "viewport": {
+          "width": 844,
+          "height": 390
+        },
+        "overflow_px": 0
+      },
+      {
+        "id": "responsive-844-setup",
+        "caption": "setup：844×390布局检查",
+        "file": "responsive-844-setup.png",
+        "viewport": {
+          "width": 844,
+          "height": 390
+        },
+        "overflow_px": 0
+      },
+      {
+        "id": "responsive-844-submission",
+        "caption": "submission：844×390布局检查",
+        "file": "responsive-844-submission.png",
+        "viewport": {
+          "width": 844,
+          "height": 390
+        },
+        "overflow_px": 0
+      },
+      {
+        "id": "responsive-844-review",
+        "caption": "review：844×390布局检查",
+        "file": "responsive-844-review.png",
+        "viewport": {
+          "width": 844,
+          "height": 390
+        },
+        "overflow_px": 0
+      },
+      {
+        "id": "responsive-844-public",
+        "caption": "public：844×390布局检查",
+        "file": "responsive-844-public.png",
+        "viewport": {
+          "width": 844,
+          "height": 390
+        },
+        "overflow_px": 0
+      },
+      {
+        "id": "responsive-844-academic",
+        "caption": "academic：844×390布局检查",
+        "file": "responsive-844-academic.png",
+        "viewport": {
+          "width": 844,
+          "height": 390
+        },
+        "overflow_px": 0
+      },
+      {
+        "id": "responsive-844-calculation",
+        "caption": "calculation：844×390布局检查",
+        "file": "responsive-844-calculation.png",
+        "viewport": {
+          "width": 844,
+          "height": 390
+        },
+        "overflow_px": 0
+      },
+      {
+        "id": "responsive-844-publication",
+        "caption": "publication：844×390布局检查",
+        "file": "responsive-844-publication.png",
+        "viewport": {
+          "width": 844,
+          "height": 390
+        },
+        "overflow_px": 0
+      },
+      {
+        "id": "responsive-844-archive",
+        "caption": "archive：844×390布局检查",
+        "file": "responsive-844-archive.png",
+        "viewport": {
+          "width": 844,
+          "height": 390
+        },
+        "overflow_px": 0
+      },
+      {
+        "id": "52-student-landscape",
+        "caption": "手机横屏查看本人最终公示结果。",
+        "file": "52-student-landscape.png",
+        "viewport": {
+          "width": 844,
+          "height": 390
+        },
+        "overflow_px": 0
+      },
+      {
+        "id": "53-account-logout",
+        "caption": "账户设置中可修改密码并退出登录。",
+        "file": "53-account-logout.png",
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "overflow_px": 0
+      }
+    ],
+    "interaction_checks": [
+      "首次登录修改密码并进入工作台",
+      "名册导入窗口模板链接下载成功，第一工作表无示例数据",
+      "学生资料编辑经表单保存并由接口返回",
+      "工程创建、权限分配、上传细则、辅助说明、时间窗口、启用提交",
+      "手机页面选择图片、真实上传、确认回执",
+      "图形界面保存是否盖章与印章文字，服务端按布尔字段持久化",
+      "多级分类选择、人工标注保存、历史记录",
+      "公共文件上传、选人、逐行记录、教师确认和固定版本绑定",
+      "课程明细保存、系统计算与个人计算轨迹",
+      "阶段性公示、学生私有结果、申请审批与增量补交",
+      "导出目录中各实际链接均经授权接口下载并返回XLSX文件",
+      "仅增量复核、替代关系、最终公示、结项与归档",
+      "空文件夹回收并从界面恢复",
+      "学生反馈从界面保存，教师没有反馈列表权限",
+      "管理员查看反馈并保存处理状态、查看日志",
+      "退出登录后返回正确入口"
+    ],
+    "javascript_errors": [],
+    "http_calls": 205,
+    "api_status_counts": {
+      "200": 198,
+      "401": 7
+    }
+  },
+  "interactions": {
+    "version": "1.0.0rc4",
+    "mode": "离线Chromium DOM + Python HTTP桥 + 本机真实uvicorn/SQLite；非浏览器原生网络和cookie；截图源为本地canvas MediaStream替身",
+    "passed": 18,
+    "checks": [
+      "真实canvas帧截取并停止全部轨道；数值裁剪320×180；确认仅入队、未上传",
+      "取消和拒绝授权不产生文件，不改变待上传队列、不发送材料请求",
+      "系统截图粘贴与确认上传走同一图片接口，服务器保留原裁剪尺寸",
+      "反馈截图、粘贴预览与原文字同时保留；最终提交2附件，学生端无反馈后台权限",
+      "70人名册Shift连续选择、已选行右键保留多选、Shift+F10菜单与Esc焦点恢复",
+      "多列筛选显示隐藏已选数；右键批量改班真实保存3人、其余67人不变",
+      "真实鼠标矩形命中多行；Esc取消拖动恢复此前选择；不触发服务端写入",
+      "输入框右键不被集合菜单接管，原生复制粘贴仍可用",
+      "Alt+2保存备注及需人工判断，成功后进入固定队列下一项，不因状态变更重排",
+      "必填缺失与网络中断不跳项、不丢备注；同一幂等键重试仅产生一个标注版本",
+      "Alt+1连同层级分类、日期和分值保存；有效项退出原筛选也仍保留本轮位置",
+      "末项成功保存后停留，下一项禁用；不会回到第一项重复评分",
+      "浏览器下载真实任务ZIP→定位身份错误并下载JSON→零写入预览→确认整批回填，均非人工核对",
+      "计算总表→成果明细→原材料跳转使用同一材料ID，不按描述猜测匹配",
+      "70张真实上传图片分60/10两页：全部筛选结果全选跨页保留，所选范围不误报为本页",
+      "浏览器名册表格导入先预览不创建账号，明确确认后创建第71名学生",
+      "新增交互所在阅卷、总表、收件页面桌面/竖屏/横屏共9组无整页横向溢出",
+      "宽表框选接近边缘自动双轴滚动；Esc取消恢复原选择，表格值不改变"
+    ],
+    "screenshots": [
+      {
+        "file": "r01-截图预览与裁剪.png",
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "overflow_px": 0
+      },
+      {
+        "file": "r02-截图粘贴后已上传.png",
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "overflow_px": 0
+      },
+      {
+        "file": "r03-反馈截图与文字保留.png",
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "overflow_px": 0
+      },
+      {
+        "file": "r04-多选与右键菜单.png",
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "overflow_px": 0
+      },
+      {
+        "file": "r05-框选与批量操作.png",
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "overflow_px": 0
+      },
+      {
+        "file": "r06-连续阅卷固定队列.png",
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "overflow_px": 0
+      },
+      {
+        "file": "r07-回填校验位置与错误说明.png",
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "overflow_px": 0
+      },
+      {
+        "file": "r08-网页AI回填预览.png",
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "overflow_px": 0
+      },
+      {
+        "file": "r10-跨页选择与范围提示.png",
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "overflow_px": 0
+      },
+      {
+        "file": "r09-review-1440.png",
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "overflow_px": 0
+      },
+      {
+        "file": "r09-calculation-1440.png",
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "overflow_px": 0
+      },
+      {
+        "file": "r09-submission-1440.png",
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "overflow_px": 0
+      },
+      {
+        "file": "r09-review-390.png",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "overflow_px": 0
+      },
+      {
+        "file": "r09-calculation-390.png",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "overflow_px": 0
+      },
+      {
+        "file": "r09-submission-390.png",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "overflow_px": 0
+      },
+      {
+        "file": "r09-review-844.png",
+        "viewport": {
+          "width": 844,
+          "height": 390
+        },
+        "overflow_px": 0
+      },
+      {
+        "file": "r09-calculation-844.png",
+        "viewport": {
+          "width": 844,
+          "height": 390
+        },
+        "overflow_px": 0
+      },
+      {
+        "file": "r09-submission-844.png",
+        "viewport": {
+          "width": 844,
+          "height": 390
+        },
+        "overflow_px": 0
+      }
+    ],
+    "javascript_errors": [],
+    "http_request_count": 443,
+    "fixture_scale": {
+      "students": 71,
+      "initial_images": 6,
+      "uploaded_images_after_growth": 70
+    },
+    "not_tested": [
+      "浏览器原生网络（采用--bridge时）",
+      "系统原生屏幕选择器/权限弹窗",
+      "实体Windows/macOS/手机",
+      "生产HTTPS/跨反向代理",
+      "并发峰值压测"
+    ]
+  },
+  "scale": {
+    "version": "1.0.0rc4",
+    "synthetic_only": true,
+    "method": "Bulk fixture schema validation + deterministic domain calculation + authenticated ASGI export endpoints; not concurrent production load.",
+    "scale": {
+      "classes": 10,
+      "students": 700,
+      "public_rows": 4200,
+      "personal_images": 8400,
+      "manual": 140,
+      "deductions": 64,
+      "course_rows": 8400,
+      "duplicates": 212,
+      "achievement_rows": 13300
+    },
+    "checks": [
+      "合成身份、公共记录、课程成绩和图片按业务Schema验证后批量建立",
+      "700名学生与独立Decimal期望值逐一比较：总分及5个分类小计一致",
+      "总表含7张工作表；最大值舍弃标记、原始分值与逐级分类小计均保留",
+      "跨10班所有成果表：13300行，无公式注入，列含盖章和详细处理记录",
+      "所有成果、分类、名册、收件、公共信息、课程、公示、申请、审计及学院导出端点真实鉴权调用通过",
+      "班级工程校验：图片资源唯一、公共原件只存一份，盖章字段与标注历史写入归档",
+      "70人、840张图片工程重新导入后，逐人分数与盖章字段保持一致；导入件未自动公示",
+      "名册、公共名单、课程三种空白模板同时提供XLSX和UTF-8 CSV"
+    ],
+    "timings_seconds": {
+      "synthetic_seed_seconds": 78.972,
+      "all_calculations_and_record_assembly_seconds": 1.185,
+      "class_summary_seconds": 0.705,
+      "college_achievements_seconds": 4.391,
+      "authenticated_export_endpoints_seconds": 10.246,
+      "personal_pdf_seconds": 0.194,
+      "class_archive_seconds": 1.904,
+      "class_archive_reimport_seconds": 1.68,
+      "total_seconds": 109.258
+    },
+    "projects": [
+      {
+        "project": "2025—2026学年合成01班综合测评",
+        "students": 70,
+        "images": 840,
+        "ready": false,
+        "issues": 14
+      },
+      {
+        "project": "2025—2026学年合成02班综合测评",
+        "students": 70,
+        "images": 840,
+        "ready": false,
+        "issues": 14
+      },
+      {
+        "project": "2025—2026学年合成03班综合测评",
+        "students": 70,
+        "images": 840,
+        "ready": false,
+        "issues": 14
+      },
+      {
+        "project": "2025—2026学年合成04班综合测评",
+        "students": 70,
+        "images": 840,
+        "ready": false,
+        "issues": 14
+      },
+      {
+        "project": "2025—2026学年合成05班综合测评",
+        "students": 70,
+        "images": 840,
+        "ready": false,
+        "issues": 14
+      },
+      {
+        "project": "2025—2026学年合成06班综合测评",
+        "students": 70,
+        "images": 840,
+        "ready": false,
+        "issues": 14
+      },
+      {
+        "project": "2025—2026学年合成07班综合测评",
+        "students": 70,
+        "images": 840,
+        "ready": false,
+        "issues": 14
+      },
+      {
+        "project": "2025—2026学年合成08班综合测评",
+        "students": 70,
+        "images": 840,
+        "ready": false,
+        "issues": 14
+      },
+      {
+        "project": "2025—2026学年合成09班综合测评",
+        "students": 70,
+        "images": 840,
+        "ready": false,
+        "issues": 14
+      },
+      {
+        "project": "2025—2026学年合成10班综合测评",
+        "students": 70,
+        "images": 840,
+        "ready": false,
+        "issues": 14
+      }
+    ],
+    "not_validated": [
+      "并发导出峰值",
+      "学校实际数据库与对象存储IO",
+      "Excel/WPS桌面应用实际打印",
+      "生产HTTPS浏览器下载"
+    ]
+  },
+  "web_ai_roundtrip": {
+    "version": "1.0.0rc4",
+    "synthetic_only": true,
+    "students": 70,
+    "images": 840,
+    "checks": [
+      "70名学生840张图片按资源校验值导出，840行固定身份与材料索引一致",
+      "第841行B列身份错误定位准确：前839条有效行同样零写入",
+      "840行完整预校验不写入任何标注，预览不伪装成人工审批",
+      "12张示例任务与12行回填完全配对、预览通过；附第13行B列错误对照及真实诊断",
+      "840条局部标注单次版本更新整体提交；全部web_ai，人工核对均为否",
+      "重复提交同一840行任务不产生重复标注版本、不重复计分"
+    ],
+    "passed": 6,
+    "timings_seconds": {
+      "export_840_seconds": 0.705,
+      "invalid_last_row_seconds": 0.16,
+      "preview_840_seconds": 0.37,
+      "commit_840_seconds": 0.228,
+      "total": 12.092
+    },
+    "not_validated": [
+      "任何实际外部AI服务的识图质量",
+      "并发提交或上传性能",
+      "真实学生资料审批"
+    ]
+  },
+  "local_cli": {
+    "version": "1.0.0rc4",
+    "checks": [
+      "独立目录生成配置并初始化唯一管理员",
+      "真实本机应用进程启动与HTTP健康检查",
+      "实际HTTP登录、改密码、写入反馈和原始图片",
+      "暂停写入、备份数据库与原件、自动恢复原运行状态",
+      "运行中系统原件SHA256与审计签名校验",
+      "按进程身份安全停止，不删除数据",
+      "恢复到空目录，原密码与密钥保留，反馈及原件引用一致",
+      "拒绝覆盖非空系统，保留现有数据"
+    ],
+    "passed": 8,
+    "failed": 0,
+    "environment": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+    "mode": "Linux本机独立进程+真实HTTP；使用已安装依赖",
+    "not_tested": [
+      "pip/离线依赖安装",
+      "Windows/macOS",
+      "Docker",
+      "PostgreSQL/systemd",
+      "HTTPS/ClamAV"
+    ]
+  },
+  "pdf": {
+    "version": "1.0.0rc4",
+    "renderer": "PyMuPDF 1.26.7",
+    "files": [
+      {
+        "file": "合成学生_个人图片材料.pdf",
+        "pages": 12,
+        "image_count_per_page": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "minimum_image_height_points": 327.96,
+        "text_and_image_bounds_valid": true,
+        "stamp_fields_present": true
+      },
+      {
+        "file": "边界测试_长说明分页.pdf",
+        "pages": 15,
+        "image_count_per_page": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "minimum_image_height_points": 277.49,
+        "text_and_image_bounds_valid": true,
+        "stamp_fields_present": true
+      }
+    ],
+    "passed": 2,
+    "failed": 0,
+    "scope": "检查全部PDF页面的一图数量、无裁切等比、页眉页脚、文字边界及文字在图片上方；另保存代表页供人工查看。非实体打印机验收。"
+  },
+  "documents": {
+    "checks": [
+      {
+        "document": "使用手册",
+        "viewport": "1440x1050",
+        "sections": 24,
+        "embedded_images": 0,
+        "missing_anchors": 0,
+        "page_overflow_px": 0,
+        "broken_images": 0
+      },
+      {
+        "document": "使用手册",
+        "viewport": "390x844",
+        "sections": 24,
+        "embedded_images": 0,
+        "missing_anchors": 0,
+        "page_overflow_px": 0,
+        "broken_images": 0
+      },
+      {
+        "document": "图文操作教程",
+        "viewport": "1440x1050",
+        "sections": 42,
+        "embedded_images": 61,
+        "missing_anchors": 0,
+        "page_overflow_px": 0,
+        "broken_images": 0
+      },
+      {
+        "document": "图文操作教程",
+        "viewport": "390x844",
+        "sections": 42,
+        "embedded_images": 61,
+        "missing_anchors": 0,
+        "page_overflow_px": 0,
+        "broken_images": 0
+      },
+      {
+        "document": "部署与维护说明",
+        "viewport": "1440x1050",
+        "sections": 18,
+        "embedded_images": 0,
+        "missing_anchors": 0,
+        "page_overflow_px": 0,
+        "broken_images": 0
+      },
+      {
+        "document": "部署与维护说明",
+        "viewport": "390x844",
+        "sections": 18,
+        "embedded_images": 0,
+        "missing_anchors": 0,
+        "page_overflow_px": 0,
+        "broken_images": 0
+      },
+      {
+        "document": "逐项核查与验收记录",
+        "viewport": "1440x1050",
+        "sections": 17,
+        "embedded_images": 0,
+        "missing_anchors": 0,
+        "page_overflow_px": 0,
+        "broken_images": 0
+      },
+      {
+        "document": "逐项核查与验收记录",
+        "viewport": "390x844",
+        "sections": 17,
+        "embedded_images": 0,
+        "missing_anchors": 0,
+        "page_overflow_px": 0,
+        "broken_images": 0
+      },
+      {
+        "document": "外部AI接入与表格回填指南",
+        "viewport": "1440x1050",
+        "sections": 9,
+        "embedded_images": 1,
+        "missing_anchors": 0,
+        "page_overflow_px": 0,
+        "broken_images": 0
+      },
+      {
+        "document": "外部AI接入与表格回填指南",
+        "viewport": "390x844",
+        "sections": 9,
+        "embedded_images": 1,
+        "missing_anchors": 0,
+        "page_overflow_px": 0,
+        "broken_images": 0
+      }
+    ],
+    "passed": 10,
+    "failed": 0,
+    "mode": "离线HTML/Chromium排版验证；非打印机或所有浏览器兼容性验收"
+  },
+  "source_audit": {
+    "baseline": "1.0.0rc3",
+    "revision": "1.0.0rc4",
+    "scope": "逐文件差异及语法检查；不宣称静态分析可证明全系统无缺陷。",
+    "compatibility_names": [
+      "clearledger data/volume/skill",
+      "public API paths",
+      "zcp format v1",
+      "bnu-synthetic-rc3 fixture UUID namespace"
+    ],
+    "changed": [
+      "README.md",
+      "agent/clearledger/SKILL.md",
+      "agent/clearledger/scripts/zc_agent.py",
+      "app/__init__.py",
+      "app/domain.py",
+      "app/exports.py",
+      "app/import_templates.py",
+      "app/main.py",
+      "app/pdf_export.py",
+      "app/reporting.py",
+      "app/rules.py",
+      "app/schemas.py",
+      "app/static/app.css",
+      "app/static/app.js",
+      "app/static/manual.html",
+      "app/static/tutorial.html",
+      "app/storage.py",
+      "app/tabular.py",
+      "app/templates/index.html",
+      "docs/ACCEPTANCE.md",
+      "docs/ARCHITECTURE.md",
+      "docs/FEATURE_MATRIX.md",
+      "docs/RELEASE_NOTES.md",
+      "docs/SECURITY.md",
+      "docs/templates/学生名册导入模板.xlsx",
+      "docs/templates/请先阅读.txt",
+      "docs/templates/课程成绩导入模板.xlsx",
+      "docs/使用手册.html",
+      "docs/图文操作教程.html",
+      "docs/逐项核查与验收记录.html",
+      "docs/部署与维护说明.html",
+      "pyproject.toml",
+      "requirements-dev.txt",
+      "scripts/console.py",
+      "tests/archive_compatibility.py",
+      "tests/cli_lifecycle.py",
+      "tests/docs_visual.py",
+      "tests/export_scale.py",
+      "tests/export_visual.py",
+      "tests/test_revision.py",
+      "tests/ui_walkthrough.py"
+    ],
+    "added": [
+      "agent/clearledger/references/diagnostics.md",
+      "agent/clearledger/references/workflows.md",
+      "app/import_compiler.py",
+      "app/offline_tasks.py",
+      "app/privacy.py",
+      "app/static/ai-guide.html",
+      "app/static/capture.js",
+      "app/static/collections.js",
+      "app/static/review-ui.js",
+      "app/static/workflow-ui.js",
+      "app/table_reader.py",
+      "app/workflow_routes.py",
+      "docs/templates/名单类奖项导入模板.csv",
+      "docs/templates/名单类奖项导入模板.xlsx",
+      "docs/外部AI接入与表格回填指南.html",
+      "tests/task_scale.py",
+      "tests/test_interchange_rc4.py",
+      "tests/ui_interactions.py"
+    ],
+    "removed": [
+      "docs/templates/公共名单_示例.csv",
+      "docs/templates/公共名单导入模板.csv",
+      "docs/templates/公共名单导入模板.xlsx",
+      "docs/templates/学生名册_示例.csv",
+      "docs/templates/课程长表_示例.csv"
+    ],
+    "python_files_parsed": 44,
+    "javascript_files_syntax_checked": 5
+  },
+  "release_archive_recheck": "独立的交付包校验记录.json；在最终源码ZIP解压后运行。",
+  "not_validated": [
+    "浏览器原生HTTP/HTTPS、cookie及反向代理端到端（本轮采用显式桥接）",
+    "操作系统原生屏幕选择器与权限弹窗（使用canvas MediaStream替身）",
+    "Windows/macOS/手机真机与系统剪贴板行为",
+    "生产Docker构建、PostgreSQL、systemd、HTTPS、TOTP、ClamAV及隔离灾备",
+    "峰值并发、校园级容量和渗透测试",
+    "实际Excel/WPS打印",
+    "外部AI模型识图准确率或真实学生评分"
+  ]
+}

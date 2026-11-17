@@ -1,0 +1,17 @@
+.env
+.env.*
+var/
+__pycache__/
+.pytest_cache/
+.coverage
+htmlcov/
+*.sqlite*
+*.zcp
+*.egg-info/
+build/
+dist/
+
+.env.migration
+.deployment.json
+.runtime/
+deploy/generated/

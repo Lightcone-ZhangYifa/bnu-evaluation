@@ -1,0 +1,115 @@
+{
+  "version": "1.0.0rc4",
+  "synthetic_only": true,
+  "method": "Bulk fixture schema validation + deterministic domain calculation + authenticated ASGI export endpoints; not concurrent production load.",
+  "scale": {
+    "classes": 10,
+    "students": 700,
+    "public_rows": 4200,
+    "personal_images": 8400,
+    "manual": 140,
+    "deductions": 64,
+    "course_rows": 8400,
+    "duplicates": 212,
+    "achievement_rows": 13300
+  },
+  "checks": [
+    "合成身份、公共记录、课程成绩和图片按业务Schema验证后批量建立",
+    "700名学生与独立Decimal期望值逐一比较：总分及5个分类小计一致",
+    "总表含7张工作表；最大值舍弃标记、原始分值与逐级分类小计均保留",
+    "跨10班所有成果表：13300行，无公式注入，列含盖章和详细处理记录",
+    "所有成果、分类、名册、收件、公共信息、课程、公示、申请、审计及学院导出端点真实鉴权调用通过",
+    "班级工程校验：图片资源唯一、公共原件只存一份，盖章字段与标注历史写入归档",
+    "70人、840张图片工程重新导入后，逐人分数与盖章字段保持一致；导入件未自动公示",
+    "名册、公共名单、课程三种空白模板同时提供XLSX和UTF-8 CSV"
+  ],
+  "timings_seconds": {
+    "synthetic_seed_seconds": 78.972,
+    "all_calculations_and_record_assembly_seconds": 1.185,
+    "class_summary_seconds": 0.705,
+    "college_achievements_seconds": 4.391,
+    "authenticated_export_endpoints_seconds": 10.246,
+    "personal_pdf_seconds": 0.194,
+    "class_archive_seconds": 1.904,
+    "class_archive_reimport_seconds": 1.68,
+    "total_seconds": 109.258
+  },
+  "projects": [
+    {
+      "project": "2025—2026学年合成01班综合测评",
+      "students": 70,
+      "images": 840,
+      "ready": false,
+      "issues": 14
+    },
+    {
+      "project": "2025—2026学年合成02班综合测评",
+      "students": 70,
+      "images": 840,
+      "ready": false,
+      "issues": 14
+    },
+    {
+      "project": "2025—2026学年合成03班综合测评",
+      "students": 70,
+      "images": 840,
+      "ready": false,
+      "issues": 14
+    },
+    {
+      "project": "2025—2026学年合成04班综合测评",
+      "students": 70,
+      "images": 840,
+      "ready": false,
+      "issues": 14
+    },
+    {
+      "project": "2025—2026学年合成05班综合测评",
+      "students": 70,
+      "images": 840,
+      "ready": false,
+      "issues": 14
+    },
+    {
+      "project": "2025—2026学年合成06班综合测评",
+      "students": 70,
+      "images": 840,
+      "ready": false,
+      "issues": 14
+    },
+    {
+      "project": "2025—2026学年合成07班综合测评",
+      "students": 70,
+      "images": 840,
+      "ready": false,
+      "issues": 14
+    },
+    {
+      "project": "2025—2026学年合成08班综合测评",
+      "students": 70,
+      "images": 840,
+      "ready": false,
+      "issues": 14
+    },
+    {
+      "project": "2025—2026学年合成09班综合测评",
+      "students": 70,
+      "images": 840,
+      "ready": false,
+      "issues": 14
+    },
+    {
+      "project": "2025—2026学年合成10班综合测评",
+      "students": 70,
+      "images": 840,
+      "ready": false,
+      "issues": 14
+    }
+  ],
+  "not_validated": [
+    "并发导出峰值",
+    "学校实际数据库与对象存储IO",
+    "Excel/WPS桌面应用实际打印",
+    "生产HTTPS浏览器下载"
+  ]
+}
